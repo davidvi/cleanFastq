@@ -1,3 +1,4 @@
+//David van IJzendoorn, 2017
 //clang++ -std=c++0x fixFastq.cpp -o fixFastq && ./fixFastq
 #include <fstream>
 #include <sstream>
