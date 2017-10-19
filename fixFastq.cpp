@@ -37,11 +37,13 @@ int main(int argc, char* argv[]) {
         break;
       case 3:
         quality = lineFastq;
-        if(regex_match(sequence, regex("[CGATNcgatn]*")) && boost::starts_with(identifier, "@") && boost::starts_with(sep, "+") && quality.length() > 0) {
+        if(regex_match(sequence, regex("[CGATNcgatn]*")) && boost::starts_with(identifier, "@") && boost::starts_with(sep, "+") && quality.length() > 0 && sequence.length() == quality.length()) {
           outfileFastq << identifier << endl;
           outfileFastq << sequence << endl;
           outfileFastq << sep << endl;
           outfileFastq << quality << endl;
+        } else {
+          break;
         }
         break;
       default:
